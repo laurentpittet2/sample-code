@@ -19,13 +19,13 @@ class CalculatorDisplay {
     console.log('Factory created new calculator')
   }
 
+  // region OPS
 
   add(a, b) {
     this.number1 = a
     this.number2 = b
     this.display = Add(this.number1, this.number2)
   }
-
 
 
   substract(a, b) {
@@ -40,6 +40,10 @@ class CalculatorDisplay {
     console.log('TODO: implement')
   }
 
+
+  // endregion
+  // region: DISPLAY
+
   clear() {
     this.display = ''
     this.number1 = null
@@ -51,6 +55,16 @@ class CalculatorDisplay {
     console.log(data)
   }
 
+  // no longer needed
+  // readFromDisplay() {
+  //   this.number1 = this.display[0]
+  //   this.number2 = this.display[1]
+  // }
+  //
+
+  // endregion
+  // region: MEMORY
+
   saveDisplayToMemory() {
     const obj = this.display
     memory.push(obj)
@@ -60,6 +74,10 @@ class CalculatorDisplay {
     const obj = memory.concat()
     this.display = obj
     memory = []
+  }
+
+  accessMemory(index) {
+    return memory[index]
   }
 
 }
